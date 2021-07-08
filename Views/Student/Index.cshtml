@@ -1,0 +1,36 @@
+﻿@model List<PersonelMVCUI.Models.EntityFramework.Student>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*@Html.ActionLink("New Student", "New",null,new {@class="btn btn-success" })*@
+<h2>Student List</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Birthday</th>
+            <th>Identity No</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Name</td>
+                <td>@student.SurName</td>
+                <td>@student.Birthday.Value.ToString("dd-MM-yyyy")</td>
+                <td>@(student.IdentityNo)</td>
+                <td>@Html.ActionLink("Update","Update",new {id= student.Id},new {@class="btn btn-success" })</td>
+                <td>@Html.ActionLink("Delete","Delete",new {id= student.Id }, new { @class = "btn btn-danger" })</td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+

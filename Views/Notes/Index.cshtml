@@ -1,0 +1,35 @@
+﻿
+@model PersonelMVCUI.ViewModels.NotesModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Notes List</h2>
+<table class="table table-bordered" id="tblDepartmanlar">
+    <thead>
+    <th>ID</th>
+    <th>Course Name</th>
+    <th>Course Notes</th>
+    <th>Student Name</th>
+    </thead>
+    <tbody>
+        @foreach (var notes in Model.Notes)
+        {
+            
+            <tr>
+                <td>@notes.Id</td>
+                <td>@notes.CourseName</td>
+                <td>@notes.Note</td>
+                <td>
+                    @Model.Student.FirstOrDefault(x => x.Id == notes.StudentId).Name
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<div id="personelListesi">
+
+
+</div>
