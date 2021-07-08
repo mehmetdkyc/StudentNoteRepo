@@ -9,3 +9,5 @@ Admin, 12345 (admin)
 Mehmet, 12345 (student)
 Giriş bilgileri yukarıda mevcuttur.
 
+![image](https://user-images.githubusercontent.com/50601213/124919744-3f80eb00-dfff-11eb-9b5a-a766f2b93efd.png)
+
